@@ -21,11 +21,13 @@ a:hover {
     text-decoration: underline;
 }
 
-.header {
+.white-navbar {
     background-color: #fff;
     border-bottom: 1px solid #dadce0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 100;
 }
 
@@ -198,6 +200,7 @@ a:hover {
 .header-bottom {
     background: #1a73e8;
     padding: 16px 24px;
+    margin-top: 69px;
 }
 
 .header-desc {
@@ -831,17 +834,31 @@ a:hover {
     font-size: 16px;
 }
 
-@media (min-width: 769px) and (max-width: 1279px) {
-    .hero-content, .blog-content, .topic-layout {
+@media (max-width: 1024px) {
+    .hero-content {
         gap: 32px;
     }
     
     .hero-text h1 {
         font-size: 36px;
     }
+    
+    .feature-cards,
+    .course-cards,
+    .platform-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .topic-layout {
+        gap: 32px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media screen and (min-width: 482px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .hamburger {
         display: block;
     }
@@ -860,54 +877,13 @@ a:hover {
         margin: 0 auto;
     }
     
-    .feature-cards, .course-cards, .platform-section {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-image-box img {
+        max-width: 300px;
     }
     
-    .blog-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .blog-text p {
-        margin: 0 auto 20px auto;
-    }
-    
-    .topic-layout {
-        flex-direction: column;
-        gap: 32px;
-    }
-    
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
-}
-
-@media screen and (max-width: 481px) {
-    .hamburger {
-        display: block;
-    }
-    
-    .nav, .search-text, .search-shortcut, .language-text, .sign-in {
-        display: none;
-    }
-    
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-    }
-    
-    .hero-text h1 {
-        font-size: 32px;
-    }
-    
-    .hero-text p {
-        margin: 0 auto;
-    }
-    
-    .feature-cards, .course-cards, .platform-section {
+    .feature-cards,
+    .course-cards,
+    .platform-section {
         grid-template-columns: 1fr;
     }
     
@@ -958,5 +934,34 @@ a:hover {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        padding: 8px 16px;
+    }
+    
+    .search-text,
+    .search-shortcut,
+    .language-text {
+        display: none;
+    }
+    
+    .sign-in {
+        display: none;
+    }
+    
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    
+    .main {
+        padding: 0 16px;
+    }
+    
+    .header-bottom2 {
+        padding: 16px;
+        height: auto;
     }
 }
